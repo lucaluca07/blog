@@ -1,9 +1,15 @@
 language: node_js
 node_js: --lts
+# 安装依赖
+install:
+- npm install hexo-cli -g
+- npm install
 before_script:
   - git config user.name "jiu_ge"
   - git config user.email "liucannn@sina.com"
   - sed -i'' "s~https://github.com/volcanoliuc/blog.git~https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/blog.git~" _config.yml
 script:
-  - hexo g
-  - hexo d
+  - hnpm run deploy
+cache:
+  directories:
+    - node_modules
