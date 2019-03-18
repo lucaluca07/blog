@@ -98,9 +98,3 @@ jsonContent:
       excerpt: false
       categories: false
       tags: true
-post_wordcount:
-  item_text: true
-  wordcount: true
-  min2read: true
-  totalcount: false
-  separated_meta: true
