@@ -4,43 +4,20 @@ node_js: stable
 
 install:
   - npm install -g hexo-cli
-  - npm install -g hexo
   - npm install
 
 before_script:
   - git config user.name "volc"
   - git config user.email "liucannn@sina.com"
-  - sed -i'' "s~git@github.com:~https://${GITHUB_ACCESS_TOKEN}@github.com/~" _config.yml
+  - - sed -i'' "s~https://github.com/volcanoliuc/volcanoliuc.github.io.git~https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io.git~" _config.yml
 script:
   - hexo clean
-  - hexo g
+  - hexo generate
 
 after_success:
-  - hexo d
-  # - cd ./public
-  # - git init
-  # - git config user.name "volc"
-  # - git config user.email "liucannn@sina.com"
-  # - git add --all
-  # - git commit -m "Deploy blog pages"
-  # - git push --force --quiet "https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io" master:master
+  - hexo deploy
 
 branches:
   only:
     - master
-
-# language: node_js
-# node_js: --lts
-# # 安装依赖
-# install:
-# - npm install hexo-cli -g
-# - npm install
-# before_script:
-#   - git config user.name "jiu_ge"
-#   - git config user.email "liucannn@sina.com"
-#   - sed -i'' "s~https://github.com/volcanoliuc/volcanoliuc.github.io.git~https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io.git~" _config.yml
-# script:
-#   - hexo clean
-#   - hexo g
-#   - hexo d
 
