@@ -79,7 +79,7 @@ function fn() {
 fn();
 ```
 <div align=center>
-<img width = "1000" src="https://raw.githubusercontent.com/volcanoliuc/blog/master/images/spoce.png"/>
+<img height = "400" src="https://raw.githubusercontent.com/volcanoliuc/blog/master/images/spoce.png"/>
 </div>
 变量<code>a</code><code>b</code><code>c</code> 都会查找当前作用域是否存在变量<code>a</code> <code>b</code> 或 <code>c</code>，如果不存在则继续查找父级作用域直至查询到全局作用域为止。这样一套变量的查找规则其实就是作用域链的作用，规定了一个变量能访问的作用域。至于为什么会这样以后有时间再细细研究（内部属性 [[Scope]] 的作用）。
 
