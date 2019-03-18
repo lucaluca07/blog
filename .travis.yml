@@ -5,15 +5,10 @@ install:
 - npm install hexo-cli -g
 - npm install
 before_script:
-  - git clone https://github.com/volcanoliuc/blog.git
-script:
-  - hexo clean
-  - hexo generate
-after_script:
-  - cd ./public
-  - git init
   - git config user.name "jiu_ge"
   - git config user.email "liucannn@sina.com"
-  - git add .
-  - git commit -m "Deploy blog pages"
-  - git push --force --quiet "https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io"
+  - sed -i'' "s~https://github.com/volcanoliuc/blog.git~https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/blog.git~" _config.yml
+script:
+  - hexo clean
+  - hexo g
+  - hexo d
