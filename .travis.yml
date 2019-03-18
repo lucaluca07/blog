@@ -4,7 +4,7 @@ node_js: stable
 
 install:
   - npm install
-  - npm install -g gitbook-cli
+  - npm install hexo-cli -g
 
 # before_script:
 #   - git clone https://github.com/nettee/hexo-theme-next themes/next
@@ -13,7 +13,7 @@ install:
 
 script:
   - hexo clean
-  - hexo generate
+  - hexo g
 
 after_script:
   - cd ./public
