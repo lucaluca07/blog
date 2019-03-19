@@ -11,10 +11,10 @@ before_script:
   - sed -i'' "s~https://github.com~https://${GITHUB_ACCESS_TOKEN}@github.com~" _config.yml
 script:
   - hexo clean
-  - hexo generate
+  - hexo g
 
 after_success:
-  - hexo deploy
+  - hexo d
 
 branches:
   only:
