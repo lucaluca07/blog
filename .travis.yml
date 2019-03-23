@@ -10,8 +10,9 @@ before_script:
   - git config user.email "liucannn@sina.com"
   - sed -i'' "s~https://github.com~https://${GITHUB_ACCESS_TOKEN}@github.com~" _config.yml
 script:
-  - npm run deploy
-
+  - hexo clean
+  - hexo g
+  - hexo d
 branches:
   only:
     - master
