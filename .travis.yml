@@ -6,13 +6,20 @@ install:
   - npm install -g hexo-cli
   - npm install
 
-before_script:
-  - git config user.email "liucannn@sina.com"
-  - sed -i'' "s~https://github.com/volcanoliuc/volcanoliuc.github.io.git~https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io.git~" _config.yml
+# before_script:
+#   - git config user.email "liucannn@sina.com"
+#   - sed -i'' "s~https://github.com/volcanoliuc/volcanoliuc.github.io.git~https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io.git~" _config.yml
 script:
   - hexo clean
   - hexo g
-  - hexo d
+after_script:
+    - cd ./public
+    - git init
+    - git config user.name "volc" # 修改name
+    - git config user.email "liucannn@sina.com" # 修改email
+    - git add .
+    - git commit -m "Travis CI Auto Builder"
+    - git push --force --quiet "https://${GITHUB_ACCESS_TOKEN}@github.com/volcanoliuc/volcanoliuc.github.io.git" master:master
 branches:
   only:
     - master
