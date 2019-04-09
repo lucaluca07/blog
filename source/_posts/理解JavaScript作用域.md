@@ -31,8 +31,6 @@ console.log(spoce); // 2
 ```
 在上面的代码中<code>1</code> 会打印出 *fn*,
 但是执行到<code>2</code>时会报错 <em style="color: red">Uncaught ReferenceError: spoce is not defined</em>。
-##### 立即执行函数
-
 
 #### 块作用域
 在 ES6 之前，JavaScript 不存在块级作用域。
@@ -99,6 +97,22 @@ fn();
 作用域查找会在找到第一个匹配标签的时候就结束，因此内外作用域有同名的变量的时候，会产生遮蔽效应，直接采用了内层的同名变量a。
 
 除了 let、const 之外，with 和 try/catch 也会产生块级作用域，这是这两种方法并不推荐使用，如果感兴趣可自行 google。
+
+#### 一个面试题
+```javascript
+var z = 10;
+function fn() {
+    console.log(z)
+}
+
+(function (fn) {
+    var z = 20;
+    fn();
+})(fn)
+```
+上面打印出来的结果是 `10`，为什么？
+JS 的作用域是静态作用域，变量声明的时候就已经确定了其作用域。fn 的作用域内没有声明 z 变量，就会查找上层作用域即全局作用域。
+
 
 #### 总结
 在 JavaScript 中函数作用域是我们最常使用的作用域单元，ES6 流行之后，块级作用域我们使用的也越来越多，let、const 声明的变量会添加到块级作用域中。
