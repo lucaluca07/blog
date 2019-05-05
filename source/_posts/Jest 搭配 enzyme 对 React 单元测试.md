@@ -4,7 +4,7 @@
 
 ##### Enzyme
 Enzyme是Airbnb开源的React测试工具库库，它功能过对官方的测试工具库ReactTestUtils的二次封装，提供了一套简洁强大的 API。
-
+<!-- more -->
 #### 环境搭建
 ##### create-react-app:
 ```js
