@@ -22,7 +22,7 @@
 .jump-container {
     &:hover {
         .icon-back {
-            background: rgba(36, 193, 246, 0.9);
+            background: rgba(14, 179, 64, 0.9);
         }
     }
 }
@@ -61,8 +61,8 @@
         text-align: center;
         display: block;
         &:hover {
-            background: #24c1f6;
-            color: #24c1f6;
+            background: rgba(14, 179, 64, 0.9);
+            color: rgba(14, 179, 64, 0.9);
         }
     }
 }
@@ -70,9 +70,9 @@
 .toc-container.tooltip-left{
     background: #ccc;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: .3s;
     &:hover {
-        background: rgba(36, 193, 246, 0.9);
+        background: rgba(14, 179, 64, 0.9);
     }
     .icon-font {
         font-size: 22px;
@@ -93,7 +93,7 @@
         min-width: 200px;
         width: initial;
         font-size: 14px;
-        text-shadow: 1px 1px 1px #398199;
+        text-shadow: 1px 1px 1px rgba(14, 179, 64, 0.9);
         bottom: -10px;
         transform-origin: 100% 100%;
         transform: translate3d(0, -10px, 0) rotate3d(1, 1, 1, -30deg);
@@ -105,9 +105,10 @@
             bottom: 23px;
         }
         .toc-article {
-            max-height: 500px;
+            max-height: 700px;
             overflow-x: hidden;
             overflow-y: auto;
+            background: rgba(14, 179, 64, 0.7);
         }
         .toc-article li ol, .toc-article li ul {
             margin-left: 30px;
