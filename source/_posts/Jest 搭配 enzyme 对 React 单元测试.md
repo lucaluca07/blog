@@ -1,6 +1,6 @@
 ---
 title: Jest搭配Enzyme对React应用单元测试
-tag: 深入学习JS
+tag: 单元测试
 date: 2019-05-04
 ---
 
