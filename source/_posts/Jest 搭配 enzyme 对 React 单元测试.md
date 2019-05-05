@@ -5,14 +5,14 @@ date: 2019-05-04
 ---
 
 #### 简介
-##### jest
+**jest**
 > Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
-##### Enzyme
+**Enzyme**
 Enzyme是Airbnb开源的React测试工具库库，它功能过对官方的测试工具库ReactTestUtils的二次封装，提供了一套简洁强大的 API。
 <!-- more -->
 #### 环境搭建
-##### create-react-app:
+**create-react-app**
 ```js
 npm install --save enzyme enzyme-adapter-react-16 react-test-renderer
 ```
@@ -72,19 +72,19 @@ test('描述', () => {
 [更多匹配器](https://jestjs.io/docs/zh-Hans/expect)
 
 #### 基础语法实例
-##### toBe
+**toBe**
 ```js
 test('two plus two is four', () => {
   expect(2 + 2).toBe(4);
 });
 ```
-##### not
+**not**
 ```js
 test('two plus two is four', () => {
   expect(2 + 2).not.toBe(5);
 });
 ```
-##### toEqual
+**toEqual**
 ```js
 test('object assignment', () => {
   const data = {one: 1};
@@ -92,7 +92,7 @@ test('object assignment', () => {
   expect(data).toEqual({one: 1, two: 2});
 });
 ```
-##### toContain
+**toContain**
 ```js
 const shoppingList = [
   'diapers',
@@ -131,7 +131,7 @@ test('the shopping list has beer on it', () => {
 
 ### 测试实例
 #### 组件代码
-##### containers/App.js
+> containers/App.js
 ```js
 import React from 'react';
 import Header from '../../components/header';
@@ -195,7 +195,7 @@ export default class App extends React.Component{
 }
 ```
 
-##### component/todo.js
+> component/todo.js
 ```js
 import React from 'react';
 
@@ -230,6 +230,7 @@ const TodoList = ({ todos=[], toggleTodo }) => (
 
 export default TodoList
 ```
+> component/todo_input.js
 ```js
 import React from 'react';
 
@@ -250,7 +251,7 @@ const TodoInput = ({onEnter, autoFocus, placeholder}) => {
 export default TodoInput;
 
 ```
-##### component/footer.js
+> component/footer.js
 ```js
 import React from 'react';
 
@@ -333,10 +334,11 @@ links.forEach((el, index) => {
 ```
 
 #### 模拟原生事件
-##### onClick事件
 simulate 方法可以模拟触发各种原生事件，接收两个参数：
 1. 事件名称：'click', 'change', 'keydown' ...
 2. event 对象
+
+##### onClick事件
 
 ```js
 it('测试点击事件', () => {
