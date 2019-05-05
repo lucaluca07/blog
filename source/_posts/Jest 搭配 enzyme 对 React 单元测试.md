@@ -1,3 +1,9 @@
+---
+title: Jest搭配Enzyme对React应用单元测试
+tag: 深入学习JS
+date: 2019-05-04
+---
+
 #### 简介
 ##### jest
 > Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
