@@ -2,7 +2,10 @@
 title: JavaScript函数的传参
 tag: 深入学习JS
 date: 2019-01-16
+categories:
+- 前端
 ---
+
 JavaScript 中的函数传参是按值传递还是按引用传递呢？
 > ECMAScript 中所有函数的参数都是按值传递的。
 <p align="right"><font color=gray size=2>摘自 JavaScript高级程序设计</font></p>
@@ -43,7 +46,6 @@ obj2: {item: "unchanged"}
 JS中有7种数据类型，6种基本数据类型（Undefined, Null, Boolean, Number, String, Symbol）和一种复杂数据类型(Object)。
 
 > 除 Object 以外的所有类型都是不可变的（值本身无法被改变）。
-
 
 #### 基本数据类型
 基本数据类型就是数字、字符串、布尔值、还有两个比较特殊的 null 和 undefined，以及 ES6 新增的 symbol 。

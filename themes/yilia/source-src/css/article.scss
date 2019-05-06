@@ -112,6 +112,7 @@
 .article-inner{
   position: relative;
   margin-bottom: 20px;
+  border-radius: 3px;
 }
 .article-header{
   border-left: 5px solid #4d4d4d;
@@ -153,7 +154,7 @@
     border-left: 5px solid #ccc;
     padding: 15px 20px;
     margin-top: 10px;
-    border-left: 5px solid #657b83;
+    border-left: 5px solid #075f03;
     background: #f6f6f6;
     p{
       margin-top: 0;
@@ -178,7 +179,7 @@
   }
   ul,ol{
     font-size: 14px;
-    margin: 10px 0px;  
+    margin: 10px 0px;
   }
   li{
     ul,ol{
@@ -195,14 +196,14 @@
   h2{
     margin-top: 20px;
     font-weight: 300;
-    color: #574C4C;
+    // color: #574C4C;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
   }
   h3,h4,h5,h6{
     margin-top: 20px;
     font-weight: 300;
-    color: #574C4C;
+    // color: #574C4C;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
   }

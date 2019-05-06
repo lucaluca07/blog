@@ -1,17 +1,20 @@
 ---
 title: Jest搭配Enzyme对React应用单元测试
-tag: 单元测试
+tags: [React, 单元测试]
 date: 2019-05-04
+categories:
+- 前端
 ---
 
-#### 简介
-**jest**
-> Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+根据官方文档的说法 Jest 是一个令人愉快的 JavaScript 测试框架。它集成了断言库、mock、快照测试、覆盖率报告等功能。它非常适合用来测试 React 代码，但不仅仅如此，所有的 js 代码都可以使用 Jest 进行测试。
 
-**Enzyme**
-Enzyme是Airbnb开源的React测试工具库库，它功能过对官方的测试工具库ReactTestUtils的二次封装，提供了一套简洁强大的 API。
+介绍完了 Jest 之后我们还要简单的介绍一下它的搭档 Enzyme。
+
+Enzyme是 Airbnb 开源的 React 测试工具库库，它功能过对官方的测试工具库 ReactTestUtils 的二次封装，提供了一套简洁强大的 API。
 <!-- more -->
-#### 环境搭建
+当然 Enzyme 不是必须的，我们可以只使用 ReactTestUtils + Jest 进行单元测试。但是如果使用 Enzyme 可以使 Jest 这个测试框架令人更愉快。
+
+### 环境搭建
 **create-react-app**
 ```js
 npm install --save enzyme enzyme-adapter-react-16 react-test-renderer
@@ -29,7 +32,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 ```
-##### 配置文件说明
+#### 配置文件说明
 - setupFiles：配置文件，在运行测试案例代码之前，Jest会先运行这里的配置文件来初始化指定的测试环境
 - moduleFileExtensions：代表支持加载的文件名
 - testPathIgnorePatterns：用正则来匹配不用测试的文件
@@ -39,14 +42,14 @@ configure({ adapter: new Adapter() });
 - moduleNameMapper：代表需要被Mock的资源名称
 - transform：用babel-jest来编译文件，生成ES6/7的语法
 
-#### 基础语法
+### 基础语法
 ```js
 test('描述', () => {
   expect('测试内容').toBe('期望结果');
 });
 ```
 - expect(value)：要测试一个值进行断言的时候，要使用expect对值进行包裹
-##### 匹配器
+#### 匹配器
 - toBe(value)：使用Object.is来进行比较，如果进行浮点数的比较，要使用toBeCloseTo。
 - not：用来取反
 - toEqual(value)：用于对象的深比较
@@ -71,20 +74,20 @@ test('描述', () => {
 
 [更多匹配器](https://jestjs.io/docs/zh-Hans/expect)
 
-#### 基础语法实例
-**toBe**
+### 基础语法实例
+#### toBe
 ```js
 test('two plus two is four', () => {
   expect(2 + 2).toBe(4);
 });
 ```
-**not**
+#### not
 ```js
 test('two plus two is four', () => {
   expect(2 + 2).not.toBe(5);
 });
 ```
-**toEqual**
+#### toEqual
 ```js
 test('object assignment', () => {
   const data = {one: 1};
@@ -92,7 +95,7 @@ test('object assignment', () => {
   expect(data).toEqual({one: 1, two: 2});
 });
 ```
-**toContain**
+#### toContain
 ```js
 const shoppingList = [
   'diapers',
@@ -108,13 +111,13 @@ test('the shopping list has beer on it', () => {
 });
 ```
 
-##### Enzyme的三种渲染方法
+#### Enzyme的三种渲染方法
 
 1. shallow：浅渲染。将组件渲染成虚拟DOM对象，只会渲染第一层，子组件将不会被渲染出来，使得效率非常高。不需要DOM环境， 并可以使用jQuery的方式访问组件的信息
 2. render：静态渲染，它将React组件渲染成静态的HTML字符串，然后使用Cheerio这个库解析这段字符串，并返回一个Cheerio的实例对象，可以用来分析组件的html结构
 3. mount：完全渲染，它将组件渲染加载成一个真实的DOM节点，用来测试DOM API的交互和组件的生命周期。用到了jsdom来模拟浏览器环境
 
-##### Enzyme常用方法
+#### Enzyme常用方法
 1. simulate(event, mock)：模拟事件，用来触发事件，event为事件名称，mock为一个event object
 2. instance()：返回组件的实例
 3. find(selector)：根据选择器查找节点，selector可以是CSS中的选择器，或者是组件的构造函数，组件的display name等
@@ -130,8 +133,11 @@ test('the shopping list has beer on it', () => {
 13. setProps(nextProps)：设置根组件的属性
 
 ### 测试实例
-#### 组件代码
+上面已经介绍了一些 Jest 和 Enzyme 的常用方法，下面就看一些 Jest 和 Enzyme 在具体的代码中是怎么配合使用的。
+
+### 组件代码
 > containers/App.js
+
 ```js
 import React from 'react';
 import Header from '../../components/header';
@@ -196,6 +202,7 @@ export default class App extends React.Component{
 ```
 
 > component/todo.js
+
 ```js
 import React from 'react';
 
@@ -211,7 +218,7 @@ const Todo = ({ onClick, completed, text }) => (
 
 export default Todo;
 ```
-##### component/todo_list.js
+#### component/todo_list.js
 ```js
 import React from 'react'
 import Todo from '../todo'
@@ -230,7 +237,9 @@ const TodoList = ({ todos=[], toggleTodo }) => (
 
 export default TodoList
 ```
+
 > component/todo_input.js
+
 ```js
 import React from 'react';
 
@@ -249,9 +258,10 @@ const TodoInput = ({onEnter, autoFocus, placeholder}) => {
 }
 
 export default TodoInput;
-
 ```
+
 > component/footer.js
+
 ```js
 import React from 'react';
 
@@ -277,7 +287,7 @@ const Footer = ({onClick, active='all'}) => (
 export default Footer
 ```
 
-#### 快照测试
+### 快照测试
 ```js
 it("Todo 快照测试", () => {
   const renderTodo = render(<Todo {...props} />);
@@ -289,7 +299,7 @@ Jest检测到 toMatchSnapshot 方法时，会在当前文件的同级目录下�
 
 > jest ---updateSnapshot
 
-#### 测试组件节点
+### 测试组件节点
 ```js
 const props = {
   todos: [
@@ -333,12 +343,12 @@ links.forEach((el, index) => {
 })
 ```
 
-#### 模拟原生事件
+### 模拟原生事件
 simulate 方法可以模拟触发各种原生事件，接收两个参数：
 1. 事件名称：'click', 'change', 'keydown' ...
 2. event 对象
 
-##### onClick事件
+#### onClick事件
 
 ```js
 it('测试点击事件', () => {
@@ -372,7 +382,7 @@ it('点击第二按钮, 会传入一个 completed', () => {
 ```
 当前第一个按钮是 disabled 状态，触发的点击事件，并且把 'all' 传入的 mock 方法。
 
-##### 键盘事件
+#### 键盘事件
 ```js
 it('target.value 为 "" onEnter 不会调用', () => {
   shallowInput.find('input').at(0).simulate('keydown',
@@ -391,7 +401,7 @@ it('target.value 不为 "" onEnter 会调用', () => {
 ```
 通过传入 keydown 模拟键盘按下的事件，event 对象中传入的 key、keyCode、target 等属性会在调用的方法中被获取。
 
-#### setState、setProps 方法
+### setState、setProps 方法
 setState方法可以直接改变组件中的 state 状态。
 ```js
 it('直接修改 state.active, todos 变化', () => {
@@ -411,7 +421,7 @@ it('改变 props 的 completed, 类名为 completed', () => {
 })
 ```
 
-#### 异步测试
+### 异步测试
 源代码：
 ```js
 const asyncFn = (number) => {
@@ -434,7 +444,7 @@ describe('asyncFn', () => {
 ```
 resolves 和 rejects 必须和前面的执行结果相匹配，不然用例也会执行失败。
 
-##### 使用 .then 测试 Promise
+#### 使用 .then 测试 Promise
 ```js
 it('test resolve with promise', () => {
   asyncFn(1).then(data => {
@@ -449,7 +459,7 @@ it('test error with promise', () => {
 });
 ```
 
-##### async await 测试
+#### async await 测试
 ```js
 // 测试resolve
 it('works resolve with async/await', async () => {
@@ -469,7 +479,7 @@ it('works reject with async/await', async () => {
 });
 ```
 
-#### 测试报告
+### 测试报告
 直接使用 jest 后面添加参数 coverage 会生成一份测试报告，同时会在根目录下生成一个 coverage 文件夹，里面有详细的测试报告
 > jest ---coverage
 控制台打印的测试报告
@@ -479,13 +489,13 @@ it('works reject with async/await', async () => {
 coverage中的测试报告
 ![WX20190505-134401@2x.png](https://github.com/volcanoliuc/blog/blob/master/images/WX20190505-134401@2x.png?raw=true)
 
-##### 四个测试维度
+#### 四个测试维度
 - 行覆盖率(line coverage)：是否测试用例的每一行都执行了
 - 函数覆盖率(function coverage)：师傅测试用例的每一个函数都调用了
 - 分支覆盖率(branch coverage)：是否测试用例的每个if代码块都执行了
 - 语句覆盖率(statement coverage)：是否测试用例的每个语句都执行了
 
-#### 总结
+### 总结
 > 上面代码并非完成的项目代码，代码已上传的 [GitHub](https://github.com/volcanoliuc/jest-todo)
 我们利用 jest 完美的测试环境和 enzyme 极简API可以快速的完成单元测试。
 总而言之，jest 和 enzyme 将会是测试react应用的不二选择。

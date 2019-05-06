@@ -62,6 +62,8 @@
   border-bottom: 1px solid #fff;
   background: #fff;
   transition: all 0.2s ease-in;
+  border-radius: 3px !important;
+  overflow: hidden !important;
 /*   &.show{
     visibility: visible;
     -webkit-animation: cd-bounce-1 0.6s;
@@ -129,6 +131,7 @@
     transition: background 0.3s;
     &:hover{
       background: #3c3c3c;
+      border: none;
     }
     &.hidden{
       visibility: hidden;

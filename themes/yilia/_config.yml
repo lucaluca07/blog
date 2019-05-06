@@ -2,8 +2,9 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
-  深入学习JS: /tags/深入学习JS/
+  前端: /categories/前端
+  随笔: /categories/随笔/
+  读书: /read/
 
 # SubNav
 subnav:
