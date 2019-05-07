@@ -74,6 +74,9 @@
   margin-left: 200px;
   padding: 15px 0;
   margin-right: 75px;
+  .article:hover{
+    box-shadow:0px 0px 12px 4px rgba(227,227,227, .8);
+  }
   .brief{
     display: block;
     color: #a8a8a8;
@@ -137,6 +140,7 @@
   line-height: 1.8em;
   padding-right: 30px;
   padding-left: 30px;
+  color: #333;
   p{
     margin-top: 10px;
   }

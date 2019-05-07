@@ -57,13 +57,14 @@
 .article {
   margin: 30px;
   position: relative;
-  border: 1px solid #ddd;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
   background: #fff;
+  box-shadow:0px 0px 12px 4px rgba(227,227,227,0.28);
   transition: all 0.2s ease-in;
-  border-radius: 3px !important;
+  border-radius: 5px !important;
   overflow: hidden !important;
+  &:hover{
+    box-shadow:0px 0px 12px 4px rgba(227,227,227, .8);
+  }
 /*   &.show{
     visibility: visible;
     -webkit-animation: cd-bounce-1 0.6s;
