@@ -491,12 +491,12 @@ coverage中的测试报告
 
 #### 四个测试维度
 - 行覆盖率(line coverage)：是否测试用例的每一行都执行了
-- 函数覆盖率(function coverage)：师傅测试用例的每一个函数都调用了
+- 函数覆盖率(function coverage)：是否测试用例的每一个函数都调用了
 - 分支覆盖率(branch coverage)：是否测试用例的每个if代码块都执行了
 - 语句覆盖率(statement coverage)：是否测试用例的每个语句都执行了
 
 ### 总结
-> 上面代码并非完成的项目代码，代码已上传的 [GitHub](https://github.com/volcanoliuc/jest-todo)
+> 上面代码并非完整的项目代码，代码已上传的 [GitHub](https://github.com/volcanoliuc/jest-todo)
 
 我们利用 jest 完美的测试环境和 enzyme 极简API可以快速的完成单元测试。
 总而言之，jest 和 enzyme 将会是测试react应用的不二选择。
