@@ -105,7 +105,7 @@ style:
   # 头像上面的背景颜色
   header: '#4d4d4d'
   # 右滑板块背景
-  slider: 'linear-gradient(to right, #243B55, #141E30)'
+  slider: '#243B55'
 
 # slider的设置
 slider:
