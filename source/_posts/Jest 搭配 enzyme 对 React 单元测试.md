@@ -4,6 +4,7 @@ tags: [React, 单元测试]
 date: 2019-05-04
 categories:
 - 前端
+toc: true
 ---
 
 根据官方文档的说法 Jest 是一个令人愉快的 JavaScript 测试框架。它集成了断言库、mock、快照测试、覆盖率报告等功能。它非常适合用来测试 React 代码，但不仅仅如此，所有的 js 代码都可以使用 Jest 进行测试。
@@ -218,7 +219,7 @@ const Todo = ({ onClick, completed, text }) => (
 
 export default Todo;
 ```
-#### component/todo_list.js
+> component/todo_list.js
 ```js
 import React from 'react'
 import Todo from '../todo'

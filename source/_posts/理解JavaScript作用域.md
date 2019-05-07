@@ -4,6 +4,7 @@ tag: 深入学习JS
 date: 2018-12-20
 categories:
 - 前端
+toc: true
 ---
 
 JavaScript 定义了一套如何存储以及查找变量的规则，这套规则就是**作用域**。

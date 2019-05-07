@@ -4,6 +4,7 @@ tag: 深入学习JS
 date: 2019-01-16
 categories:
 - 前端
+toc: true
 ---
 
 JavaScript 中的函数传参是按值传递还是按引用传递呢？
