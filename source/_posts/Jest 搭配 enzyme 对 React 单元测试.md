@@ -497,5 +497,6 @@ coverage中的测试报告
 
 ### 总结
 > 上面代码并非完成的项目代码，代码已上传的 [GitHub](https://github.com/volcanoliuc/jest-todo)
+
 我们利用 jest 完美的测试环境和 enzyme 极简API可以快速的完成单元测试。
 总而言之，jest 和 enzyme 将会是测试react应用的不二选择。
