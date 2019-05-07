@@ -10,7 +10,7 @@ menu:
 subnav:
   github: "https://github.com/volcanoliuc"
   # weibo: "#"
-  rss: "#"
+  rss: "/atom.xml"
   # yuque: "https://www.yuque.com/liucan-jbrkf"
   zhihu: "https://www.zhihu.com/people/volc-43/activities"
   #qq: "#"
