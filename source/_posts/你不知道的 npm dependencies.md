@@ -36,7 +36,7 @@ toc: true
 
 ### dependencies 和 devDependencies
 说了这么多还是没有解决小明同学的问题，小明同学的问题该怎么回答呢？其实官网上已经解答了这个问题。
-![-w703](http://image.volc.top/2019-07-01-15619530639128.jpg)
+![-w703](http://image.volc.top/2019-07-01-15619530639128.jpg?attname=&e=1561961265&token=3hpwDXSbS4xMwQjV2bYCDWiaevTvbbrJiT0G0cWf:SB-sHIKIr8IDtA1wViVDWfXp-jc)
 
 > npm install --production
 执行上面的命令时安装的是 dependencies 的依赖，不添加 `--production` 则安装所有的依赖包。
