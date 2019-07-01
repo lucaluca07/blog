@@ -10,7 +10,7 @@ toc: true
 今天中午同事小明突然问 package.json 中的 dependencies 和 devDependencies 有什么区别吗？
 
 听到这个问题我就很自然而然的告诉他 dependencies 是生产的依赖包，devDependencies 是开发时需要的依赖包。
-
+<!-- more -->
 然而小明同学对这个答案并不满意，继续说道：“我刚刚试了一下，我把生产的依赖包安装在 devDependencies，然后用 webbpack 还是会把 devDependencies 中的生产依赖包打包进去”。
 
 听到这里我内心产生了一丝慌乱，难道我对 dependencies 和 devDependencies 理解有误，我立即以迅雷不及掩耳盗铃之势打开了 Chrome 浏览器，噼里啪啦一顿操作打开了 [https://docs.npmjs.com/cli/install](https://docs.npmjs.com/cli/install) 。
